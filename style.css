@@ -14,14 +14,14 @@ body {
   font-family: "Manrope", sans-serif;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
   padding: 50px 0;
 }
 
 .wrapper {
   background-color: rgba(255, 255, 255, 0.1);
-  width: 50%;
-  max-width: 31.25em;
+  width: 35%;
+  min-width: 500px;
+  margin-top: 50px;
   padding: 2em;
   border-radius: 0.5em;
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
@@ -78,4 +78,50 @@ body {
   & button#set:hover {
     border-color: rgba(255, 255, 255, 0.4);
   }
+}
+
+.alarm {
+  display: grid;
+  grid-template-columns: 9fr 1fr 2fr;
+  margin-top: 1.5em;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.6em;
+
+  & input[type="checkbox"] {
+    appearance: none;
+    height: 1em;
+    width: 2em;
+    background-color: #797979;
+    border-radius: 4px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+
+  & input[type="checkbox"]:before {
+    position: absolute;
+    content: "";
+    background-color: #202020;
+    height: 0.9em;
+    width: 0.8em;
+    border-radius: 3px;
+    top: 0.06em;
+    left: 0.06em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  & input[type="checkbox"]:checked {
+    background-color: #2d9b1f;
+  }
+
+  & input[type="checkbox"]:checked:before {
+    background-color: #202020;
+    left: 1.14em;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.bx-trash {
+  color: rgb(245, 84, 84);
 }
